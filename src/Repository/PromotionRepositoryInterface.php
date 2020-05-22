@@ -4,20 +4,18 @@ declare(strict_types=1);
 
 namespace Setono\SyliusCatalogPromotionPlugin\Repository;
 
+use DateTimeInterface;
+use Doctrine\ORM\Query\Expr\OrderBy;
 use Setono\SyliusCatalogPromotionPlugin\Model\PromotionInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 interface PromotionRepositoryInterface extends RepositoryInterface, HasAnyBeenUpdatedSinceRepositoryInterface
 {
     /**
-     * This is the method used for processing of promotions
-     * It should return promotions with these properties
-     * - Enabled
-     * - At least one enabled channel
-     * - Sorted by exclusive ascending and thereafter priority
-     * - The current time should be within the respective promotions time interval
+     * Will return enabled promotions with at least one enabled channel
+     * - If the $dateTime argument is set it will return promotions that was active on this date, otherwise today will be used
      *
      * @return PromotionInterface[]
      */
-    public function findForProcessing(): array;
+    public function findEnabledWithChannel(array $orderBy = null, DateTimeInterface $dateTime = null): array;
 }

@@ -100,7 +100,7 @@ final class ProcessPromotionsCommand extends Command
         $startTime = new DateTime();
 
         /** @var PromotionInterface[] $promotions */
-        $promotions = $this->promotionRepository->findForProcessing();
+        $promotions = $this->promotionRepository->findEnabledWithChannel(['exclusive' => 'asc', 'priority' => 'asc']);
         $promotionIds = array_map(static function (PromotionInterface $promotion): int {
             return (int) $promotion->getId();
         }, $promotions);
