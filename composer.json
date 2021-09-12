@@ -1,7 +1,8 @@
 {
-    "name": "setono/sylius-catalog-promotion-plugin",
+    "name": "sylfrid/sylius-catalog-promotion-plugin",
     "type": "sylius-plugin",
     "description": "Catalog promotion plugin for Sylius",
+    "version": "1.0.0",
     "keywords": [
         "sylius",
         "sylius-plugin",
@@ -17,7 +18,7 @@
         "doctrine/dbal": "^2.13",
         "doctrine/event-manager": "^1.1",
         "doctrine/orm": "^2.7",
-        "fzaninotto/faker": "^1.9",
+        "fakerphp/faker": "^1.9",
         "knplabs/knp-menu": "^3.2",
         "setono/job-status-bundle": "^0.2.1",
         "sylius/registry": "^1.6",
