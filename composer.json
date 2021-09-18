@@ -2,7 +2,7 @@
     "name": "sylfrid/sylius-catalog-promotion-plugin",
     "type": "sylius-plugin",
     "description": "Catalog promotion plugin for Sylius",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "sylius",
         "sylius-plugin",
